@@ -8,26 +8,26 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight health check and status endpoint for uptime monitoring. /healthz answers "OK" in milliseconds, optionally before other plugins load.
+Lightweight health check and status endpoint for uptime monitoring. /flywphealth answers "OK" in milliseconds, optionally before other plugins load.
 
 == Description ==
 
-FlyWP Health adds a fast **health check endpoint** to your WordPress site: `https://example.com/healthz`. Point any **uptime monitoring** service at it (Uptime Kuma, UptimeRobot, Better Stack, Pingdom, StatusCake, Kubernetes or load balancer probes) and get a clear answer: HTTP 200 with the body `OK` when WordPress runs and its database is reachable.
+FlyWP Health adds a fast **health check endpoint** to your WordPress site: `https://example.com/flywphealth`. Point any **uptime monitoring** service at it (Uptime Kuma, UptimeRobot, Better Stack, Pingdom, StatusCake, Kubernetes or load balancer probes) and get a clear answer: HTTP 200 with the body `OK` when WordPress runs and its database is reachable.
 
 Unlike checking your homepage, the **status endpoint** does not render a theme, does not touch page caches and does not show up in analytics. It stops WordPress right after it has answered.
 
 = Features =
 
-* **Health check endpoint** at `/healthz` for GET and HEAD requests, plain `OK` response.
+* **Health check endpoint** at `/flywphealth` for GET and HEAD requests, plain `OK` response.
 * **Must-use mode (optional)**: answers before other plugins load, so the check is faster and still works when another plugin breaks. Off by default, one checkbox to turn it on.
 * **Optional access key**: require an `X-FlyWP-Health-Key` header (or `?key=`) so only your monitor gets `OK`; everyone else gets HTTP 403.
 * **Private by design**: no versions, paths, plugin lists or server details in the response. Sent with `no-cache` and `X-Robots-Tag: noindex`.
 * **No tracking, no external requests, no ads.** The plugin never contacts any external service.
-* Works in subdirectory installs (`https://example.com/blog/healthz`).
+* Works in subdirectory installs (`https://example.com/blog/flywphealth`).
 
 = Monitor setup =
 
-* URL: `https://example.com/healthz`
+* URL: `https://example.com/flywphealth`
 * Method: GET or HEAD
 * Expected: status 200, keyword `OK`
 * With an access key: header `X-FlyWP-Health-Key: your-key`
@@ -35,7 +35,7 @@ Unlike checking your homepage, the **status endpoint** does not render a theme, 
 == Installation ==
 
 1. Install and activate FlyWP Health from Plugins > Add New, or upload the `flywp-health` folder to `/wp-content/plugins/`.
-2. Open `https://your-site/healthz` – it answers `OK`.
+2. Open `https://your-site/flywphealth` – it answers `OK`.
 3. Optional: go to Settings > FlyWP Health to turn on must-use mode or set an access key.
 
 == Frequently Asked Questions ==
@@ -58,7 +58,7 @@ Requests without the key get HTTP 403. Prefer the `X-FlyWP-Health-Key` header; t
 
 = Does it work with page caching or a CDN? =
 
-The response is sent with `Cache-Control: no-cache, must-revalidate, max-age=0, no-store, private`. If your CDN caches everything regardless, add a bypass rule for `/healthz`.
+The response is sent with `Cache-Control: no-cache, must-revalidate, max-age=0, no-store, private`. If your CDN caches everything regardless, add a bypass rule for `/flywphealth`.
 
 = Does the plugin send data anywhere? =
 
@@ -72,7 +72,7 @@ No. Site Health checks your configuration from the dashboard. FlyWP Health gives
 
 = 1.0.0 =
 * First release on WordPress.org.
-* Health check endpoint `/healthz` (GET and HEAD) with plain `OK` response.
+* Health check endpoint `/flywphealth` (GET and HEAD) with plain `OK` response.
 * Optional must-use mode with automatic cleanup on disable, deactivation and uninstall.
 * Optional access key via settings or the `FLYWP_HEALTH_KEY` constant.
 

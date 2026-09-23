@@ -57,7 +57,7 @@ class FlyWP_Health_MU {
 		$code     = "<?php\n"
 			. "/**\n"
 			. " * Plugin Name: FlyWP Health (early endpoint)\n"
-			. " * Description: Answers /healthz before other plugins load. Managed by FlyWP Health: turn it off under Settings > FlyWP Health.\n"
+			. " * Description: Answers /flywphealth before other plugins load. Managed by FlyWP Health: turn it off under Settings > FlyWP Health.\n"
 			. ' * ' . self::MARKER . "\n"
 			. " */\n\n"
 			. "defined( 'ABSPATH' ) || exit;\n\n"

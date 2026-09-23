@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       FlyWP Health
  * Plugin URI:        https://www.flywpcode.com/
- * Description:       Lightweight health check and status endpoint for uptime monitoring. Answers /healthz with "OK", optionally before other plugins load.
+ * Description:       Lightweight health check and status endpoint for uptime monitoring. Answers /flywphealth with "OK", optionally before other plugins load.
  * Version:           1.0.0
  * Requires at least: 5.8
  * Requires PHP:      7.4

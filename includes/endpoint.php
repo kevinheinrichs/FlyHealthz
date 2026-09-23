@@ -2,7 +2,7 @@
 /**
  * FlyWP Health endpoint.
  *
- * Answers GET/HEAD requests to /healthz with "OK" and stops WordPress right there.
+ * Answers GET/HEAD requests to /flywphealth with "OK" and stops WordPress right there.
  * Loaded by the plugin file and, when the optional must-use mode is on, by the
  * small loader in wp-content/mu-plugins so the check runs before other plugins.
  *
@@ -24,7 +24,7 @@ if ( ! function_exists( 'flywp_health_handle_request' ) ) {
 		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
 		$path        = (string) wp_parse_url( $request_uri, PHP_URL_PATH );
 		$home_path   = (string) wp_parse_url( home_url( '/' ), PHP_URL_PATH );
-		$endpoint    = rtrim( $home_path, '/' ) . '/healthz';
+		$endpoint    = rtrim( $home_path, '/' ) . '/flywphealth';
 
 		if ( rtrim( $path, '/' ) !== $endpoint ) {
 			return;

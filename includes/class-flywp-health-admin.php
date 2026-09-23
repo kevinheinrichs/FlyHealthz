@@ -144,7 +144,7 @@ class FlyWP_Health_Admin {
 			return;
 		}
 
-		$endpoint = home_url( '/healthz' );
+		$endpoint = home_url( '/flywphealth' );
 		$key      = flywp_health_access_key();
 		$locked   = defined( 'FLYWP_HEALTH_KEY' );
 		?>
