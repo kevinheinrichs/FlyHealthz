@@ -18,6 +18,7 @@ Requires WordPress 5.8+, PHP 7.4+. The wordpress.org description is in [readme.t
 | `assets/logo.png` | 80×80 logo for the settings page (shown at 40px) |
 | `.wordpress-org/` | Icons and banners for the wordpress.org SVN `/assets` folder, not part of the plugin ZIP |
 | `bin/build-zip.sh` | Builds `dist/flywp-health.zip` for wordpress.org |
+| `bin/make-assets.py` | Rebuilds icons, banners and `assets/logo.png` from Kevin's logo PNG |
 
 ## Checks before a release
 
