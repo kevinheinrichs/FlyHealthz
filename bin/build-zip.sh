@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 tmp=$(mktemp -d)
 mkdir "$tmp/flywp-health"
-cp -r flywp-health.php uninstall.php readme.txt includes "$tmp/flywp-health/"
+cp -r flywp-health.php uninstall.php readme.txt includes assets "$tmp/flywp-health/"
 mkdir -p dist
 rm -f dist/flywp-health.zip
 (cd "$tmp" && find flywp-health -exec touch -d '2026-09-23 00:00:00' {} + && zip -qrX - flywp-health) > dist/flywp-health.zip

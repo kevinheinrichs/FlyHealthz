@@ -149,7 +149,10 @@ class FlyWP_Health_Admin {
 		$locked   = defined( 'FLYWP_HEALTH_KEY' );
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'FlyWP Health', 'flywp-health' ); ?></h1>
+			<h1 style="display:flex;align-items:center;gap:10px;">
+				<img src="<?php echo esc_url( plugins_url( 'assets/logo.png', FLYWP_HEALTH_DIR . 'flywp-health.php' ) ); ?>" width="40" height="40" alt="">
+				<?php esc_html_e( 'FlyWP Health', 'flywp-health' ); ?>
+			</h1>
 			<?php settings_errors( self::PAGE ); ?>
 
 			<p>

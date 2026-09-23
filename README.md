@@ -15,6 +15,8 @@ Requires WordPress 5.8+, PHP 7.4+. The wordpress.org description is in [readme.t
 | `includes/class-flywp-health-mu.php` | Writes/removes the MU loader (marker `flywp-health-mu-loader`) |
 | `includes/class-flywp-health-admin.php` | Settings page (Settings API, `manage_options`) |
 | `uninstall.php` | Removes the loader and both options |
+| `assets/logo.png` | 80×80 logo for the settings page (shown at 40px) |
+| `.wordpress-org/` | Icons and banners for the wordpress.org SVN `/assets` folder, not part of the plugin ZIP |
 | `bin/build-zip.sh` | Builds `dist/flywp-health.zip` for wordpress.org |
 
 ## Checks before a release
